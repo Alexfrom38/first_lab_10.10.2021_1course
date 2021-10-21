@@ -66,5 +66,8 @@ int main(void)
 	}
 	printf(" sum  = %lf ", sum);
 	
+	free(array_of_numbers);
+	free(array_of_remains);
+	
 	return 0;
 }
