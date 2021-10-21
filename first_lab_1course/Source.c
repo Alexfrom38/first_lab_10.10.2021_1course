@@ -13,7 +13,7 @@ int main(void)
 {
 	char fl = 0;
 	int min_numb = 0, max_numb = 0, count_of_numb = 0;
-		double current_random_numb = 0, sum = 0;
+	double current_random_numb = 0, sum = 0;
 	double* array_of_numbers; 
 	int* array_of_remains;
 
