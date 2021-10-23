@@ -62,6 +62,10 @@ int main(void)
 			if (i == array_of_remains[q])
 				fl = 1;
 		}
+		
+		if (fl == 1)
+		 	sum -= current_random_numb; 
+		
 	
 	}
 	printf(" sum  = %lf ", sum);
