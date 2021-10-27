@@ -13,8 +13,9 @@ int main(void)
 {
 	char fl = 0;
 	int min_numb = 0, max_numb = 0, count_of_numb = 0;
-	double current_random_numb = 0, sum = 0;
-	double* array_of_numbers; 
+
+	double current_random_numb = 0, sum = 0 ;
+
 	int* array_of_remains;
 
 	printf("input numbers: min,max, and count \n");
@@ -28,10 +29,9 @@ int main(void)
 	printf("input count of number: ");
 	scanf_s("%d", &count_of_numb);
 
-	array_of_numbers = (double*)malloc(count_of_numb * sizeof(double));
 	array_of_remains = (int*)malloc(count_of_numb * sizeof(int));
 	
-	if (array_of_numbers == 0)
+	if (array_of_remains == 0)
 	{
 		printf("Error: memory is not allocated \n");
 		return 0;
@@ -55,23 +55,23 @@ int main(void)
 		fl = 0;
 		current_random_numb = (((double)rand()) / RAND_MAX) * ((double)max_numb - (double)min_numb) + min_numb;
 		array_of_remains[i] = remains(&current_random_numb);
-		
+	
 		sum += current_random_numb;
-		for (int q = 0; q < i; q++)
+		for (int q = 0; q <= i; q++)
 		{
 			if (i == array_of_remains[q])
 				fl = 1;
 		}
 		
 		if (fl == 1)
-		 	sum -= current_random_numb; 
-		
-	
+		{
+			sum -= current_random_numb;
+		}
+
 	}
-	printf(" sum  = %lf ", sum);
 	
-	free(array_of_numbers);
+	printf("sum  = %lf \n", sum);
+
 	free(array_of_remains);
-	
 	return 0;
 }
