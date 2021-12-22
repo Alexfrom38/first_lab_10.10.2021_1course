@@ -17,6 +17,7 @@ int remains(double double_number)
 int main(void)
 {
 	char fl = 0;
+	long double pr = 1;
 	int min_numb = 0, max_numb = 0, count_of_numb = 0;
 
 	double current_random_numb = 0, sum = 0 ;
@@ -73,7 +74,16 @@ int main(void)
 		printf("%d \n", array_of_remains[i]);
 	}
 	
+	for (int q = 0; q < count_of_numb; q++)
+	{
+		if (array_of_remains[q] < 25)
+		{
+			pr = pr * array_of_numbers[q];
+		}
 
+
+	}
+	
 	for (int i = 0; i < count_of_numb; i++)
 		if (array_of_remains[i] < count_of_numb)
 		{
@@ -83,7 +93,9 @@ int main(void)
 
 	for (int i = 0; i < count_of_numb; i++)
 		sum = sum + array_of_numbers[i];
+	
 	printf("sum  = %lf \n", sum);
+	printf("pr  = %lf \n", pr);
 
 	free(array_of_remains);
 	free(array_of_numbers);
